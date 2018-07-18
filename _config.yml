@@ -1,4 +1,4 @@
-title: Hello, world! I'm Hoang Nam
+title: "" #Hello, world! I'm Hoang Nam
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -12,7 +12,7 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Hoàng Nam # add your name
 author-img: HoangNam.JPG # add your photo
-about-author:  am a JAVA developer focusing on BACK-END development. Always hungry to keep learning. # add description
+about-author:  I'm a JAVA developer focusing on BACK-END development. Always hungry to keep learning. # add description
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
 social-github: artemsheludko # add your Github handle

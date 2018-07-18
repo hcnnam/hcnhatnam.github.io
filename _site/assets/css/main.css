@@ -786,9 +786,10 @@ h1 {
 }
 
 img {
-  max-width: 100%;
-  vertical-align: middle;
-  display: inline-block;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 200px;
 }
 
 img + em {
@@ -1140,9 +1141,10 @@ footer .copyright {
   width: 30%;
   max-width: 100%;
   min-height: 11rem;
-  -webkit-background-size: cover;
-          background-size: cover;
+  -webkit-background-size: contain;
+          background-size: contain;
   background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
 
 .post .post-content {
