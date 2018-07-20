@@ -41,7 +41,7 @@ section {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin: 0.67em 0;
 }
 
@@ -86,7 +86,7 @@ hr {
 pre {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 1em;
+  font-size: 0.8em;
   /* 2 */
 }
 
@@ -773,7 +773,7 @@ html {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Slab';
   color: #515151;
   background-color: #fbfbfb;
   margin: 0;
@@ -1208,6 +1208,8 @@ a.newer-posts:hover {
 }
 
 .header-page .page-title {
+  font-family: 'Pacifico';
+  font-weight: 900;
   font-weight: 400;
   margin: 0 0 10px;
   line-height: 1.3;
@@ -1481,4 +1483,8 @@ a.newer-posts:hover {
   .post .post-content .post-title a {
     font-size: 21px;
   }
+}
+
+p img{
+  max-width: 90%;
 }
