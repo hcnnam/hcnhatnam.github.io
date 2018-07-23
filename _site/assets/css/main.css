@@ -769,7 +769,7 @@ template {
 }
 
 html {
-  line-height: 1.5;
+  line-height: 2.5;
 }
 
 body {
@@ -1484,7 +1484,6 @@ a.newer-posts:hover {
     font-size: 21px;
   }
 }
-
 p img{
   max-width: 90%;
 }

@@ -56,9 +56,11 @@ public class SearchServer {
     }
 }
 {% endhighlight %}
++ Các đối tượng tham khảo [Embedding Jetty][embedding-jetty]
++ Ở đây khởi tạo Server với địa chỉ http://localhost:8080 và xét các context là các ngữ cảnh.
++ Context: khi chúng ta truy cập đúng vào đường dẫn của context -> các phương thức của 1 class chỉ định sẽ được run.
+ >Ví dụ :với địa chỉ là http://localhost:8080/index thì các các phương thức xử lý trong class SearchForm sẽ được chạy
++ Chi tiết về cách hiện thực class sẽ được đề cập ở phần sau.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+[embedding-jetty]: https://www.eclipse.org/jetty/documentation/9.3.x/advanced-embedding.html
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/

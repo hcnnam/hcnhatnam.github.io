@@ -33,6 +33,10 @@
     
     <meta content="Java" property="article:tag">
     
+    <meta content="NetBean" property="article:tag">
+    
+    <meta content="Libruary" property="article:tag">
+    
   
 
     <meta name="twitter:card" content="summary">
@@ -129,65 +133,56 @@
         <h1 class="page-title">Tut0: Bên lề</h1>
         <div class="page-date"><span>2018, Jul 21&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
       </header>
-      <h2 id="1thêm-thư-viện-bằng-file-jar">1.Thêm thư viện bằng file .jar?</h2>
-<p>Truy cập vào Maven Respository
+      <h2 id="1tải-thư-việnlib-bằng-file-jar">1.Tải thư viện(Lib) bằng file .jar?</h2>
+<ul>
+  <li>Truy cập vào <a href="https://mvnrepository.com/">Maven Respository</a></li>
+  <li>
+    <p>Tìm kiếm Library(Lib) cần thiết ở thanh Search
 <img src="/assets/img/tut0:Benle/mavenRespository.png" alt="Maven Respository" /></p>
+  </li>
+  <li>Ví dụ Jetty Libruary</li>
+</ul>
 
-<p>Jetty là một Web containner.Nó gồm các core thành phần sau:</p>
+<p><img src="/assets/img/tut0:Benle/jettyExample1.png" alt="Maven Respository" />
+<em>Tìm kiếm Lib</em></p>
 
 <ul>
   <li>
-    <p>Http Server</p>
+    <p>Lựa chọn phiên bản.
+<img src="/assets/img/tut0:Benle/jettyExample2.png" alt="Maven Respository" />
+<em>Hình 2: Chọn Version của Lib</em></p>
   </li>
   <li>
-    <p>Servlet Container</p>
+    <p>Click vào View All để download Lib.
+<img src="/assets/img/tut0:Benle/jettyExample3.png" alt="Maven Respository" />
+<em>Hình 3: View All Lib</em></p>
   </li>
   <li>
-    <p>HTTP Client</p>
+    <p>Chọn file .jar để Download
+<img src="/assets/img/tut0:Benle/jettyExample4.png" alt="Maven Respository" />
+<em>Hình 4:DownLoad file .jar(Lib))</em></p>
   </li>
 </ul>
 
-<blockquote>
-  <p>Web Container(hay còn gọi là Servlet Container) là một thành phần của Web Server mà tương tác với Java Servlets. Một Web Container chịu trác nhiệm quản lý vòng đời của Servlets, mapping một URL đến một Servlets được chỉ định.</p>
-</blockquote>
+<h2 id="1thêm-thư-viện-vào-netbean">1.Thêm thư viện vào NetBean?</h2>
 
-<h2 id="2-tại-sao-phải-dùng-jetty">2. Tại sao phải dùng Jetty?</h2>
-
-<blockquote>
-  <p>“Don’t deploy your application in Jetty, deploy Jetty in your application!”</p>
-</blockquote>
-
-<p>Jetty được xem như một component của ứng, “nhúng” trực tiếp một web server vào ứng dụng và có khả năng mở rộng tốt. Hơn nữa nó nhẹ, dễ cài đặt nhưng cực kỳ hiệu quả.</p>
-
-<h2 id="3cài-đặt">3.Cài đặt</h2>
-
-<p>Thêm vào jetty….</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.eclipse.jetty.server.Server</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.eclipse.jetty.servlet.DefaultServlet</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.eclipse.jetty.servlet.ServletContextHandler</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.eclipse.jetty.servlet.ServletHolder</span><span class="o">;</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SearchServer</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span>
-    <span class="o">{</span>
-        <span class="n">Server</span> <span class="n">server</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Server</span><span class="o">(</span><span class="mi">8080</span><span class="o">);</span>
-
-        <span class="n">ServletContextHandler</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ServletContextHandler</span><span class="o">(</span><span class="n">ServletContextHandler</span><span class="o">.</span><span class="na">SESSIONS</span><span class="o">);</span>
-        <span class="n">context</span><span class="o">.</span><span class="na">setContextPath</span><span class="o">(</span><span class="s">"/"</span><span class="o">);</span>
-        <span class="n">context</span><span class="o">.</span><span class="na">setResourceBase</span><span class="o">(</span><span class="s">"./src/resourceWeb/"</span><span class="o">);</span>
-        <span class="n">context</span><span class="o">.</span><span class="na">addServlet</span><span class="o">(</span><span class="n">SearchForm</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="s">"/index"</span><span class="o">);</span>
-        <span class="n">context</span><span class="o">.</span><span class="na">addServlet</span><span class="o">(</span><span class="n">AdminForm</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="s">"/Admin"</span><span class="o">);</span>
-        <span class="n">context</span><span class="o">.</span><span class="na">addServlet</span><span class="o">(</span><span class="n">AdminAlterForm</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="s">"/Admin/Alter"</span><span class="o">);</span>
-        
-        <span class="n">ServletHolder</span> <span class="n">holderPwd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ServletHolder</span><span class="o">(</span><span class="s">"default"</span><span class="o">,</span> <span class="n">DefaultServlet</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-        <span class="n">context</span><span class="o">.</span><span class="na">addServlet</span><span class="o">(</span><span class="n">holderPwd</span><span class="o">,</span><span class="s">"/*"</span><span class="o">);</span>
-        <span class="n">server</span><span class="o">.</span><span class="na">setHandler</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
-       <span class="n">server</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-        <span class="n">server</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<ul>
+  <li>
+    <p>Click phải vào Libraries chọn Add JAR/Folder
+<img src="/assets/img/tut0:Benle/netBeanExample1.png" alt="NetBean Libraries" />
+<em>Hình 5: Add file .jar vào NetBean</em></p>
+  </li>
+  <li>
+    <p>Click phải vào Libraries chọn Add JAR/Folder
+<img src="/assets/img/tut0:Benle/netBeanExample2.png" alt="NetBean Libraries" />
+<em>Hình 5: Chọn Patch đến file .jar</em></p>
+  </li>
+  <li>
+    <p>Click phải vào Libraries chọn Add JAR/Folder
+<img src="/assets/img/tut0:Benle/netBeanExample3.png" alt="NetBean Libraries" />
+<em>Hình 5: Kết quả sau khi add xong file .jar</em></p>
+  </li>
+</ul>
 
 
       <div class="page-footer">
@@ -199,6 +194,10 @@
         <div class="page-tag">
           
             <a href="/tags#Java" class="tag">&#35; Java</a>
+          
+            <a href="/tags#NetBean" class="tag">&#35; NetBean</a>
+          
+            <a href="/tags#Libruary" class="tag">&#35; Libruary</a>
           
         </div>
       </div>
